@@ -250,7 +250,7 @@ nav a:hover::after {
   font-size: 0.95rem;
   color: var(--accent-gold);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.1s;
 }
 
 .project-card .github-button:hover {
@@ -300,7 +300,7 @@ nav a:hover::after {
 }
 
 .resume-link:hover {
-  text-decoration: underline;
+  text-decoration: unset;
 }
 
 /* Contact */
