@@ -1,21 +1,46 @@
+/**
+ * Portfolio Stylesheet
+ * @author Sachin Yadav
+ * @version 1.0.0
+ * 
+ * Table of Contents:
+ * 1. Variables & Theme
+ * 2. Base & Reset
+ * 3. Typography & Utilities
+ * 4. Layout
+ * 5. Navigation
+ * 6. Hero Section
+ * 7. About Section
+ * 8. Skills Section
+ * 9. Experience Section
+ * 10. Projects Section
+ * 11. Coding Stats
+ * 12. Achievements Section
+ * 13. Contact Section
+ * 14. Footer
+ * 15. Responsive Design
+ */
+
+/* ============================================
+   1. VARIABLES & THEME
+   ============================================ */
 :root {
+  /* Colors - Obsidian & Gold Theme */
   --dark-navy: #0a0a0a;
-  /* Obsidian Black */
   --navy: #171717;
-  /* Dark Charcoal */
   --light-navy: #262626;
-  /* Light Charcoal */
   --slate: #a3a3a3;
-  /* Neutral Grey */
   --light-slate: #d4d4d4;
   --lightest-slate: #f5f5f5;
   --white: #ffffff;
   --green: #fbbf24;
-  /* Elegant Gold */
+  /* Primary Accent - Gold */
 
+  /* Typography */
   --font-sans: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
   --font-mono: 'Fira Code', 'SF Mono', 'Fira Mono', 'Roboto Mono', monospace;
 
+  /* Font Sizes */
   --fz-xxs: 12px;
   --fz-xs: 13px;
   --fz-sm: 14px;
@@ -25,13 +50,19 @@
   --fz-xxl: 22px;
   --fz-heading: 32px;
 
+  /* Spacing & Layout */
   --border-radius: 4px;
   --nav-height: 100px;
   --nav-scroll-height: 70px;
 
+  /* Animations */
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
+/* ============================================
+   2. BASE & RESET
+   ============================================ */
 
 html {
   scroll-behavior: smooth;
