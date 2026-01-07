@@ -1,68 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const $ = s => document.querySelector(s);
-  const $$ = s => document.querySelectorAll(s);
 
-  const isCoarse = matchMedia('(pointer: coarse)').matches;
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  feather.replace();
 
-  // Subtle custom cursor
-  const cursor = $('.cursor');
-  if (!isCoarse && cursor) {
-    let x = 0, y = 0, raf = 0;
-    function draw(){ cursor.style.left = `${x}px`; cursor.style.top = `${y}px`; raf = 0; }
-    function move(e){ x = e.clientX; y = e.clientY; if(!raf) raf = requestAnimationFrame(draw); }
-    document.addEventListener('mousemove', move, { passive: true });
+  // 2. Elements
+  const navMenu = document.getElementById('nav-menu');
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navbar = document.getElementById('navbar');
 
-    const hoverSel = 'a, button, input, textarea, select, label, [role="button"]';
-    document.addEventListener('pointerover', e => { if (e.target.closest(hoverSel)) cursor.classList.add('cursor--grow'); });
-    document.addEventListener('pointerout',  e => { if (e.target.closest(hoverSel)) cursor.classList.remove('cursor--grow'); });
+  // 3. Mobile Menu Toggle
+  let isMenuOpen = false;
 
-    const typingSel = 'input, textarea, [contenteditable="true"]';
-    $$(typingSel).forEach(el => {
-      el.addEventListener('focus', () => document.body.classList.add('is-typing'));
-      el.addEventListener('blur',  () => document.body.classList.remove('is-typing'));
-    });
-
-    if (reduceMotion) cursor.style.transition = 'none';
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      navMenu.classList.add('active');
+      menuBtn.innerHTML = '<i data-feather="x"></i>';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    } else {
+      navMenu.classList.remove('active');
+      menuBtn.innerHTML = '<i data-feather="menu"></i>';
+      document.body.style.overflow = '';
+    }
+    feather.replace();
   }
 
-  // Reveal-on-scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
-
-  $$('.reveal').forEach(el => {
-    if (reduceMotion) el.classList.add('visible');
-    else io.observe(el);
-  });
-
-  // Theme toggle
-  const themeBtn = $('.theme-toggle');
-  themeBtn?.addEventListener('click', () => {
-    const root = document.documentElement;
-    root.classList.toggle('light');
-    themeBtn.textContent = root.classList.contains('light') ? '☀️' : '🌙';
-  });
-
-  // Mobile nav
-  const navBtn = $('.nav-toggle');
-  const nav = $('#nav');
-  if (navBtn && nav) {
-    let open = false;
-    navBtn.addEventListener('click', () => {
-      open = !open;
-      nav.style.display = open ? 'flex' : 'none';
-      navBtn.setAttribute('aria-expanded', String(open));
-    });
-    nav.addEventListener('click', e => {
-      if (e.target.tagName === 'A' && open) {
-        open = false; nav.style.display = 'none';
-        navBtn.setAttribute('aria-expanded','false');
-      }
-    });
+  if (menuBtn) {
+    menuBtn.addEventListener('click', toggleMenu);
   }
 
-  // Footer year
-  const y = $('#year');
-  if (y) y.textContent = new Date().getFullYear();
+  // Close menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
+
+  // Close menu when clicking outside (optional but good UX)
+  document.addEventListener('click', (e) => {
+    if (isMenuOpen && !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+      toggleMenu();
+    }
+  });
+
+  // 4. Navbar Scroll Effect (Hide/Show on Scroll)
+  let lastScrollTop = 0;
+  const delta = 5;
+  const navbarHeight = navbar.offsetHeight;
+
+  window.addEventListener('scroll', () => {
+    const st = window.scrollY;
+
+    // Make navbar shadow appear after scrolling down a bit
+    if (st > 0) {
+      navbar.style.boxShadow = '0 10px 30px -10px rgba(2,12,27,0.7)';
+    } else {
+      navbar.style.boxShadow = 'none';
+    }
+
+    // Hide/Show Logic
+    if (Math.abs(lastScrollTop - st) <= delta) return;
+
+    if (st > lastScrollTop && st > navbarHeight) {
+      // Scroll Down
+      navbar.style.transform = `translateY(-${navbarHeight}px)`;
+    } else {
+      // Scroll Up
+      navbar.style.transform = 'translateY(0)';
+    }
+    lastScrollTop = st;
+  });
+
 });

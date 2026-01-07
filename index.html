@@ -1,164 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sachin Yadav | Developer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachin Yadav | Software Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
+
 <body>
 
-  <div class="cursor"></div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div class="logo-img-wrapper">
+          <img src="profile.jpg" alt="SY">
+        </div>
+      </a>
 
-  <header class="reveal">
-    <div class="container">
-      <div class="header-left">
-        <img src="profile.jpg" alt="Sachin Yadav" class="profile-thumb">
-        <a href="#" class="logo">SY</a>
+      <div class="nav-links" id="nav-menu">
+        <ol>
+          <li><a href="#coding-profiles" class="nav-link"><span class="nav-num"></span> Stats</a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-num"></span> About</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-num"></span> Skills</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-num"></span> Exp</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-num"></span> Projects</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-num"></span> Contact</a></li>
+        </ol>
+        <a href="https://drive.google.com/file/d/15MWnGByOcE_pOrdQph6Xenhvys3QBZkd/view?usp=sharing" target="_blank"
+          class="nav-cta">Resume</a>
       </div>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://drive.google.com/file/d/1wQtG0J-DtaFH36K0m5pQNKZkVzm0Ozr8/view?usp=sharing" target="_blank" class="contact-button">Download Resume</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="hero">
-      <div class="hero-content">
-        <h1 class="reveal">Sachin Yadav</h1>
-        <p class="hero-subtitle reveal">Full-stack developer passionate about solving complex DSA and CP problems and creating reliable, user-focused applications</p>
+      <button class="menu-btn" aria-label="Open Menu">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content hero-split">
+        <div class="hero-text">
+          <h2 class="hero-intro">Hi, my name is</h2>
+          <h1 class="hero-name">Sachin Yadav</h1>
+          <h3 class="hero-role">I solve complex problems with code.</h3>
+          <p class="hero-desc">
+            I'm a software engineer passionate about <strong>Data Structures, Algorithms</strong>, and building
+            <strong>scalable systems</strong>.
+            With a strong foundation in competitive programming and full-stack development, I turn abstract logic into
+            efficient, user-centric solutions.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">Check out my work!</a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/sachiny0106" target="_blank" title="GitHub"><i data-feather="github"></i></a>
+            <a href="https://www.linkedin.com/in/sachin-yadav-3ab655257" target="_blank" title="LinkedIn"><i
+                data-feather="linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Right: Stats -->
+        <div class="hero-stats">
+          <div class="stats-grid compact-grid">
+            <!-- LeetCode -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <i data-feather="code" class="stat-icon"></i>
+                <h3>LeetCode</h3>
+              </div>
+              <div class="stat-img-wrapper">
+                <img src="leetcode.png" alt="LeetCode Stats" class="stat-img">
+              </div>
+              <div class="stat-details">
+                <div class="stat-row">
+                  <span class="stat-label">Rating</span>
+                  <span class="stat-value">1,646</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Problems</span>
+                  <span class="stat-value highlight">774</span>
+                </div>
+              </div>
+              <a href="https://leetcode.com/sachin0106" target="_blank" class="stat-link">View <i
+                  data-feather="external-link"></i></a>
+            </div>
+
+            <!-- Codeforces -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <i data-feather="terminal" class="stat-icon"></i>
+                <h3>Codeforces</h3>
+              </div>
+              <div class="stat-img-wrapper">
+                <img src="codeforces.png" alt="Codeforces Stats" class="stat-img">
+              </div>
+              <div class="stat-details">
+                <div class="stat-row">
+                  <span class="stat-label">Rank</span>
+                  <span class="stat-value highlight">Expert</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Rating</span>
+                  <span class="stat-value">1,825</span>
+                </div>
+              </div>
+              <a href="https://codeforces.com/profile/Sachin0106" target="_blank" class="stat-link">View <i
+                  data-feather="external-link"></i></a>
+            </div>
+
+            <!-- CodeChef -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <i data-feather="cpu" class="stat-icon"></i>
+                <h3>CodeChef</h3>
+              </div>
+              <div class="stat-img-wrapper">
+                <img src="codechef.png" alt="CodeChef Stats" class="stat-img">
+              </div>
+              <div class="stat-details">
+                <div class="stat-row">
+                  <span class="stat-label">Stars</span>
+                  <span class="stat-value highlight">3★</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Rating</span>
+                  <span class="stat-value">1,787</span>
+                </div>
+              </div>
+              <a href="https://www.codechef.com/users/sachiny0106" target="_blank" class="stat-link">View <i
+                  data-feather="external-link"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-  <div class="container projects-grid">
 
-    <!-- Project 1: Chat Sphere -->
-    <div class="project-card reveal">
-      <a href="https://chat-sphere-znbh.onrender.com" target="_blank">
-        <img src="chatapp.jpg" alt="Chat Sphere Project" />
-        <div class="card-overlay">
-          <h3>Chat Sphere</h3>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2 class="section-heading"><span class="sec-num">02.</span> About Me</h2>
+      <div class="about-wrapper">
+        <div class="about-text">
+          <p>
+            Hello! My name is Sachin and I enjoy cracking logic puzzles and building efficient software. My journey
+            started with a fascination for <strong>Competitive Programming</strong>, which honed my ability to write
+            optimized code under pressure.
+          </p>
+          <p>
+            Today, I leverage that problem-solving mindset to build robust web applications, whether it's optimizing
+            database queries, architecting backend systems, or designing intuitive UIs.
+            I've had the privilege of applying these skills at an <a href="#" class="highlight-link">advertising
+              agency</a>, a <a href="#" class="highlight-link">start-up</a>, and through various hackathons.
+          </p>
+          <div class="education-block">
+            <h3>Education</h3>
+            <p>B.Tech in ECE at <strong>IIIT Bhopal</strong> (2022-2026)</p>
+            <p>CGPA: 9.37</p>
+          </div>
         </div>
-      </a>
-      <div class="card-links">
-        <a href="https://chat-sphere-znbh.onrender.com" target="_blank">Live Demo</a>
-        <a href="https://github.com/sachiny0106/chat_sphere" target="_blank">GitHub</a>
+        <div class="about-img">
+          <div class="img-wrapper">
+            <img src="problem_solving.png" alt="Innovation & Problem Solving">
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Project 2: Social Media Platform -->
-    <div class="project-card reveal">
-      <a href="https://mern-social-media-app-zeta.vercel.app" target="_blank">
-        <img src="socialmedia.jpg" alt="Social Media Platform" />
-        <div class="card-overlay">
-          <h3>Social Media Platform</h3>
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2 class="section-heading"><span class="sec-num">03.</span> My Tech Arsenal</h2>
+
+      <div class="skills-grid">
+        <!-- Languages -->
+        <div class="skill-category">
+          <h3><i data-feather="code"></i> Languages</h3>
+          <div class="skill-list">
+            <div class="skill-item">C++ / STL</div>
+            <div class="skill-item">JavaScript (ES6+)</div>
+            <div class="skill-item">SQL / NoSQL</div>
+            <div class="skill-item">HTML5 & CSS3</div>
+          </div>
         </div>
-      </a>
-      <div class="card-links">
-        <!-- <a href="https://mern-social-media-app-zeta.vercel.app" target="_blank">Live Demo</a> -->
-        <a href="https://github.com/sachiny0106/social-media" target="_blank">GitHub</a>
+
+        <!-- Frameworks -->
+        <div class="skill-category">
+          <h3><i data-feather="layers"></i> Frameworks</h3>
+          <div class="skill-list">
+            <div class="skill-item">React.js</div>
+            <div class="skill-item">Next.js</div>
+            <div class="skill-item">Node.js</div>
+            <div class="skill-item">Express.js</div>
+            <div class="skill-item">Redux Toolkit</div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category">
+          <h3><i data-feather="tool"></i> Tools</h3>
+          <div class="skill-list">
+            <div class="skill-item">Git & GitHub</div>
+            <div class="skill-item">Docker</div>
+            <div class="skill-item">MongoDB</div>
+            <div class="skill-item">PostgreSQL</div>
+            <div class="skill-item">Redis</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Project 3: CryptoPulse -->
-    <div class="project-card reveal">
-      <a href="https://crypto-pulse-nine.vercel.app" target="_blank">
-        <img src="crypto.jpg" alt="CryptoPulse Project" />
-        <div class="card-overlay">
-          <h3>CryptoPulse</h3>
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="section-heading"><span class="sec-num">04.</span> Where I've Worked</h2>
+      <div class="job-card">
+        <div class="job-header">
+          <h3>Software Development Intern <span class="company">@ Evatra Technologies</span></h3>
+          <span class="job-date">May 2025 – July 2025</span>
         </div>
-      </a>
-      <div class="card-links">
-        <a href="https://crypto-pulse-nine.vercel.app" target="_blank">Live Demo</a>
-        <a href="https://github.com/sachiny0106/CryptoPulse" target="_blank">GitHub</a>
+        <ul class="job-desc">
+          <li>Engineered <strong>ERP backend systems</strong>, integrating <strong>Model Context Protocol (MCP)</strong>
+            to accelerate developer onboarding across a 10K+ LOC Node.js codebase.</li>
+          <li>Designed and optimized <strong>RESTful APIs</strong> in Node.js, reducing response time by
+            <strong>30%</strong> via server-side pagination.
+          </li>
+          <li>Implemented centralized error handling and caching to improve system reliability.</li>
+        </ul>
       </div>
-    </div>
-    <!-- Project 4: Password Vault -->
-  <div class="project-card reveal">
-  <img src="password_vault.jpg" alt="Password Vault Demo" />
-  <div class="card-overlay">
-    <h3>Mini Password Vault (Chrome Extension)</h3>
+    </section>
 
-    <div class="card-links">
-      <a href="https://github.com/sachiny0106/Password_Vault" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-</div>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section-heading"><span class="sec-num">05.</span> Some Things I've Built</h2>
+      <div class="projects-grid">
 
-  <!-- Project 5: Calculator -->
-  <div class="project-card reveal">
-  <img src="Calculator.jpg" alt="Calculator" />
-  <div class="card-overlay">
-    <h3>Mini Calculator</h3>
-
-    <div class="card-links">
-      <a href="https://calculator-chi-three-27.vercel.app/" target="_blank">Live Demo</a>
-      <a href="https://github.com/sachiny0106/Calculator" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-  </div>
-
-</section>
-
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="container about-container">
-        <div class="about-text reveal">
-          <h2 class="section-title">About Me</h2>
-          <p>Hello! I'm Sachin, a passionate full-stack developer and technology enthusiast pursuing my B.Tech at IIIT Bhopal. I specialize in building modern web applications that blend intuitive design with powerful functionality. With a deep interest in backend architecture, frontend dynamics, and scalable systems, I focus on crafting performant solutions that solve real-world problems.</p>
-          <a href="https://drive.google.com/file/d/1wQtG0J-DtaFH36K0m5pQNKZkVzm0Ozr8/view?usp=sharing" target="_blank" class="resume-link">View Resume <i data-feather="download"></i></a>
+        <!-- AI Quiz App -->
+        <div class="project-card">
+          <div class="project-top">
+            <div class="folder-icon"><i data-feather="folder"></i></div>
+            <div class="project-links">
+              <a href="https://plum-assignment-brown.vercel.app" target="_blank"><i
+                  data-feather="external-link"></i></a>
+              <a href="https://github.com/sachiny0106/ai-quiz-app" target="_blank"><i data-feather="github"></i></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">AI-Powered Knowledge Quiz</h3>
+            <p class="project-desc">
+              A dynamic, AI-driven quiz application that generates questions on any topic you choose. Built with React,
+              TypeScript, and Google's Gemini AI.
+            </p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Gemini AI</span>
+            </div>
+          </div>
         </div>
-        <div class="about-skills reveal">
-          <h3>Tech Stack</h3>
-          <ul>
-            <li>MERN Stack</li>
-            <li>Redux, Socket.IO</li>
-            <li>REST APIs</li>
-            <li>Data Structures & Algorithms</li>
-            <li>UI/UX & System Design</li>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-top">
+            <div class="folder-icon"><i data-feather="folder"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/sachiny0106/social-media" target="_blank"><i data-feather="github"></i></a>
+              <a href="#" target="_blank"><i data-feather="external-link"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">LinkUp</h3>
+          <div class="project-desc">
+            <p>A full-stack social networking platform with real-time feeds and secure authentication.</p>
+          </div>
+          <ul class="project-tech-list">
+            <li>Next.js</li>
+            <li>Firebase</li>
+            <li>Tailwind</li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-top">
+            <div class="folder-icon"><i data-feather="folder"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/sachiny0106/chat_sphere" target="_blank"><i data-feather="github"></i></a>
+              <a href="https://chat-sphere-znbh.onrender.com" target="_blank"><i data-feather="external-link"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Chat Sphere</h3>
+          <div class="project-desc">
+            <p>Real-time messaging app featuring WebSocket presence detection and read receipts.</p>
+          </div>
+          <ul class="project-tech-list">
+            <li>MERN</li>
+            <li>Socket.io</li>
+            <li>React</li>
+          </ul>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-top">
+            <div class="folder-icon"><i data-feather="folder"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/sachiny0106/EquiPay" target="_blank"><i data-feather="github"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">EquiPay</h3>
+          <div class="project-desc">
+            <p>Expense tracker for groups with automated bill splitting and settlement logic.</p>
+          </div>
+          <ul class="project-tech-list">
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Algorithms</li>
+          </ul>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-top">
+            <div class="folder-icon"><i data-feather="folder"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/sachiny0106/CryptoPulse" target="_blank"><i data-feather="github"></i></a>
+              <a href="https://crypto-pulse-nine.vercel.app" target="_blank"><i data-feather="external-link"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">CryptoPulse</h3>
+          <div class="project-desc">
+            <p>Cryptocurrency dashboard tracking live market data and trends.</p>
+          </div>
+          <ul class="project-tech-list">
+            <li>API</li>
+            <li>Chart.js</li>
+            <li>CSS</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section --> 
-    <section id="contact">
-      <div class="container text-center reveal">
-        <h2 class="section-title">Let's Connect</h2>
-        <p>Open to new opportunities, collaborations, and exciting ideas.</p>
-        <a href="mailto:sachiny1050@gmail.com" class="email-link">Email</a>
+    <!-- Other Noteworthy Projects (Archives) could go here -->
 
-      <div class="social-links">
-      <a href="https://www.linkedin.com/in/sachin-yadav-3ab655257" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <i data-feather="linkedin" aria-hidden="true"></i>
-      <span>LinkedIn</span>
-    </a>
-
-  <a href="https://github.com/sachiny0106" target="_blank" rel="noopener" aria-label="GitHub">
-    <i data-feather="github" aria-hidden="true"></i>
-    <span>GitHub</span>
-  </a>
-
-  <a href="https://leetcode.com/sachin0106" target="_blank" rel="noopener">LeetCode</a>
-  <a href="https://codeforces.com/profile/Sachin0106" target="_blank" rel="noopener">Codeforces</a>
-</div>
-
-        </div>
-      </div>
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+      <h2 class="section-heading sec-center"><span class="sec-num">06.</span> What's Next?</h2>
+      <h2 class="big-title">Get In Touch</h2>
+      <p class="contact-desc">
+        I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want
+        to say hi, I'll try my best to get back to you!
+      </p>
+      <a href="mailto:sachiny1050@gmail.com" class="btn btn-primary big-btn">Say Hello</a>
     </section>
+
   </main>
+
+  <footer class="footer">
+    <div class="social-links">
+      <a href="https://github.com/sachiny0106" target="_blank"><i data-feather="github"></i></a>
+      <a href="https://www.linkedin.com/in/sachin-yadav-3ab655257" target="_blank"><i data-feather="linkedin"></i></a>
+      <a href="https://leetcode.com/sachin0106" target="_blank"><i data-feather="code"></i></a>
+    </div>
+    <p>Built by Sachin Yadav.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
